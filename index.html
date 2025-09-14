@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raqam IT Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Initialize theme from localStorage to prevent FOUC (Flash of Unstyled Content)
+    (function() {
+      try {
+        const theme = localStorage.getItem('raqam-theme') || 'light';
+        const html = document.documentElement;
+        html.classList.remove('light', 'dark', 'theme-teal');
+        if (theme === 'dark') {
+          html.classList.add('dark');
+        } else if (theme === 'theme-teal') {
+          html.classList.add('theme-teal');
+        } else {
+          html.classList.add('light');
+        }
+        
+        const lang = localStorage.getItem('raqam-language') || 'en';
+        html.setAttribute('lang', lang);
+        html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      } catch (e) {
+        console.error('Failed to apply theme or language from localStorage', e);
+      }
+    })();
+  </script>
+  <style>
+    /* Custom styles for the teal theme */
+    .theme-teal {
+      --color-bg: #0D2B35;
+      --color-text: #D1E8E2;
+      --color-primary: #11999E;
+      --color-secondary: #40514E;
+      --color-card: #0F3843;
+      --color-border: #30E3CA;
+    }
+    /* Ensure transitions for a smooth theme change */
+    body, .bg-primary, .bg-secondary, .text-primary {
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+  </style>
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-6qp9J6Lu.js"></script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 theme-teal:bg-[--color-bg] text-gray-800 dark:text-gray-200 theme-teal:text-[--color-text] font-sans antialiased">
+  <div id="root"></div>
+</body>
+</html>
