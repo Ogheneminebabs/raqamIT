@@ -28,7 +28,7 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Amiri', Consolas, 'Courier New', monospace;
             transition: background-color 0.3s, color 0.3s;
             margin: 0;
             padding: 0;
