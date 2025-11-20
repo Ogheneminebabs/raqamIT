@@ -144,21 +144,7 @@
             </div>
         </div>
     </footer>
-    
-    <script>
-        // Simple logic for the standalone page to select language and update year
-        const preferredLang = (navigator.language.includes('ar') || window.location.search.includes('lang=ar')) ? 'ar' : 'en';
-        document.documentElement.lang = preferredLang;
 
-        document.querySelectorAll('[data-en], [data-ar]').forEach(el => {
-            const lang = document.documentElement.lang;
-            const text = el.getAttribute(`data-${lang}`);
-            if (text) {
-                el.textContent = text;
-            }
-        });
-
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
