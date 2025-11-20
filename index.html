@@ -7,12 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="light-theme">
-    <!-- Main Header -->
     <header>
         <nav class="container">
             <a href="#" class="logo" onclick="showPage('home')">
@@ -20,7 +18,6 @@
             </a>
             
             <div class="nav-controls">
-                <!-- Theme toggle buttons with icons -->
                 <button id="theme-toggle-light" class="theme-btn">
                     <i class="fas fa-sun"></i>
                 </button>
@@ -33,24 +30,20 @@
                 <button id="language-toggle-btn" class="language-btn">
                     <span id="language-text">العربية</span>
                 </button>
-                <p class="language-btn"><a href="#policy" onclick="showPage('policy')" data-en="Policy" data-ar="السياسة">Policy</a></p>
+                <p class="language-btn"><a href="privacy_policy.html" target="_blank" data-en="Policy" data-ar="السياسة">Policy</a></p>
                 
             </div>
         </nav>
     </header>
 
-    <!-- Main Content Area -->
     <main class="container">
-        <!-- Home Page Section -->
         <section id="home-page" class="page-section">
-            <!-- Hero Section -->
             <div class="hero-section">
                 <h1 data-en="Unlocking Digital Potential" data-ar="نطلق العنان للإمكانات الرقمية">Unlocking Digital Potential</h1>
                 <p data-en="Empowering businesses with cutting-edge web and mobile applications, and reliable hardware solutions." data-ar="تمكين الشركات من خلال أحدث تطبيقات الويب والجوال، وحلول الأجهزة الموثوقة.">Empowering businesses with cutting-edge web and mobile applications, and reliable hardware solutions.</p>
                 <a href="#" onclick="scrollToSection('services-section')" class="btn-primary" data-en="Explore Our Services" data-ar="اكتشف خدماتنا">Explore Our Services</a>
             </div>
 
-            <!-- Services Section -->
             <div id="services-section" style="padding: 3rem 0;">
                 <h2 class="section-heading" data-en="Our Expertise" data-ar="خبراتنا">Our Expertise</h2>
                 <div class="grid-container">
@@ -72,11 +65,9 @@
                 </div>
             </div>
 
-            <!-- Apps Showcase -->
             <div id="apps-showcase" style="padding: 3rem 0;">
                 <h2 class="section-heading" data-en="Our Apps" data-ar="تطبيقاتنا">Our Apps</h2>
                 <div class="grid-container" style="grid-template-columns: 1fr; gap: 2rem;">
-                    <!-- Huruf App Card -->
                     <div class="card app-card">
                         <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Huruf" alt="Huruf App Icon" style="border-radius: 0.75rem; margin-bottom: 1rem;">
                         <div class="app-details">
@@ -85,16 +76,6 @@
                             <a href="#" class="btn-primary" style="align-self: flex-start;" onclick="showAppDetails('huruf')" data-en="Learn More" data-ar="تعرف على المزيد">Learn More</a>
                         </div>
                     </div>
-                    <!-- Tarkib App Card -->
-                    <!-- <div class="card app-card">
-                        <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Tarkib" alt="Tarkib App Icon" style="border-radius: 0.75rem; margin-bottom: 1rem;">
-                        <div class="app-details">
-                            <h3 class="card-title" style="font-size: 1.5rem; color: var(--primary-color);" data-en="Tarkib: Scrabble-like Game" data-ar="تركيب: لعبة شبيهة بـ Scrabble">Tarkib: Scrabble-like Game</h3>
-                            <p style="margin-bottom: 1rem;" data-en="A highly engaging multi-player game where players score points by building words on a board, with bonus squares and strategic play." data-ar="لعبة جماعية جذابة للغاية حيث يسجل اللاعبون النقاط عن طريق بناء الكلمات على لوحة، مع مربعات إضافية ولعب استراتيجي.">A highly engaging multi-player game where players score points by building words on a board, with bonus squares and strategic play.</p>
-                            <a href="#" class="btn-primary" style="align-self: flex-start;" onclick="showAppDetails('tarkib')" data-en="Learn More" data-ar="تعرف على المزيد">Learn More</a>
-                        </div>
-                    </div> -->
-                    <!-- Arabic Word Finder App Card -->
                     <div class="card app-card">
                         <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Finder" alt="Word Finder App Icon" style="border-radius: 0.75rem; margin-bottom: 1rem;">
                         <div class="app-details">
@@ -107,45 +88,6 @@
             </div>
         </section>
 
-        <!-- Policy Page Section -->
-        <section id="policy-page" class="page-section hidden">
-            <div class="policy-container">
-                <h1 data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</h1>
-                <div style="padding: 1.5rem 0;">
-                    <p data-en="RaqamIT and its apps are committed to protecting your privacy. This policy outlines how we handle data when you use our services." data-ar="تلتزم رقام آي تي وتطبيقاتها بحماية خصوصيتك. توضح هذه السياسة كيفية تعاملنا مع البيانات عند استخدامك لخدماتنا.">RaqamIT and its apps are committed to protecting your privacy. This policy outlines how we handle data when you use our services.</p>
-                    
-                    <h2 data-en="Data Collection" data-ar="جمع البيانات">Data Collection</h2>
-                    <p data-en="Our apps may collect non-personally identifiable information for the purpose of improving user experience and application performance. This may include:" data-ar="قد تجمع تطبيقاتنا معلومات غير شخصية لغرض تحسين تجربة المستخدم وأداء التطبيق. قد يشمل ذلك:">Our apps may collect non-personally identifiable information for the purpose of improving user experience and application performance. This may include:</p>
-                    <ul style="list-style-type: disc; padding-left: 2rem; margin-top: 0.5rem;">
-                        <li data-en="Device information (e.g., model, OS version)." data-ar="معلومات الجهاز (مثل الطراز، إصدار نظام التشغيل).">Device information (e.g., model, OS version).</li>
-                        <li data-en="Usage data (e.g., features used, session duration, in-app events)." data-ar="بيانات الاستخدام (مثل الميزات المستخدمة، مدة الجلسة، الأحداث داخل التطبيق).">Usage data (e.g., features used, session duration, in-app events).</li>
-                        <li data-en="Crash logs and error reports to diagnose and fix software issues." data-ar="سجلات الأعطال وتقارير الأخطاء لتشخيص وإصلاح مشاكل البرامج.">Crash logs and error reports to diagnose and fix software issues.</li>
-                    </ul>
-                    
-                    <h2 data-en="Use of Data" data-ar="استخدام البيانات">Use of Data</h2>
-                    <p data-en="The data we collect is used solely for the following purposes:" data-ar="يتم استخدام البيانات التي نجمعها فقط للأغراض التالية:">The data we collect is used solely for the following purposes:</p>
-                    <ul style="list-style-type: disc; padding-left: 2rem; margin-top: 0.5rem;">
-                        <li data-en="To operate, maintain, and improve our apps and services." data-ar="لتشغيل وصيانة وتحسين تطبيقاتنا وخدماتنا.">To operate, maintain, and improve our apps and services.</li>
-                        <li data-en="To analyze trends and usage patterns." data-ar="لتحليل الاتجاهات وأنماط الاستخدام.">To analyze trends and usage patterns.</li>
-                        <li data-en="To ensure the stability and security of our services." data-ar="لضمان استقرار وأمان خدماتنا.">To ensure the stability and security of our services.</li>
-                    </ul>
-
-                    <h2 data-en="Third-Party Services" data-ar="خدمات الطرف الثالث">Third-Party Services</h2>
-                    <p data-en="We may use third-party services to assist in our operations. These services are used for analytics, crash reporting, and advertising, and they may collect their own data in accordance with their privacy policies." data-ar="قد نستخدم خدمات طرف ثالث للمساعدة في عملياتنا. تُستخدم هذه الخدمات للتحليلات، وتقارير الأعطال، والإعلانات، وقد تجمع بياناتها الخاصة وفقًا لسياسات الخصوصية الخاصة بها.">We may use third-party services to assist in our operations. These services are used for analytics, crash reporting, and advertising, and they may collect their own data in accordance with their privacy policies.</p>
-
-                    <h2 data-en="Security of Data" data-ar="أمان البيانات">Security of Data</h2>
-                    <p data-en="We strive to use commercially acceptable means to protect your data. However, no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee its absolute security." data-ar="نسعى جاهدين لاستخدام وسائل مقبولة تجارياً لحماية بياناتك. ومع ذلك، لا توجد طريقة إرسال عبر الإنترنت أو طريقة تخزين إلكتروني آمنة بنسبة 100%.">We strive to use commercially acceptable means to protect your data. However, no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee its absolute security.</p>
-                
-                    <h2 data-en="Children's Privacy" data-ar="خصوصية الأطفال">Children's Privacy</h2>
-                    <p data-en="Our apps are designed for users of all ages, including children under 13. We are committed to protecting children's privacy and comply with the Children's Online Privacy Protection Act (COPPA). We do not knowingly collect personal information from children without verifiable parental consent. Non-personally identifiable data may be collected for app performance and improvement." data-ar="تطبيقاتنا مصممة للمستخدمين من جميع الأعمار، بما في ذلك الأطفال دون سن 13 عامًا. نحن ملتزمون بحماية خصوصية الأطفال ونلتزم بقانون حماية خصوصية الأطفال على الإنترنت (COPPA). نحن لا نجمع عن علم معلومات شخصية من الأطفال دون موافقة الوالدين القابلة للتحقق. قد يتم جمع بيانات غير شخصية لغرض تحسين أداء التطبيق.">Our apps are designed for users of all ages, including children under 13. We are committed to protecting children's privacy and comply with the Children's Online Privacy Protection Act (COPPA). We do not knowingly collect personal information from children without verifiable parental consent. Non-personally identifiable data may be collected for app performance and improvement.</p>
-
-                    <h2 data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
-                    <p data-en="If you have any questions about this Privacy Policy, please contact us at info@raqamit.com" data-ar="إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا على info@raqamit.com">If you have any questions about this Privacy Policy, please contact us at <a href='mailto:info@raqamit.com' style='color: var(--primary-color);'>info@raqamit.com</a></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- App Details Page -->
         <section id="app-details-page" class="page-section hidden">
             <div class="app-details-content">
                 <img id="app-details-img" src="" alt="App Icon" style="width: 150px; height: 150px;">
@@ -156,7 +98,6 @@
         </section>
     </main>
 
-    <!-- Rich Footer -->
     <footer>
         <div class="container footer-grid">
             <div>
@@ -167,7 +108,7 @@
                 <h3 class="footer-title" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="#" onclick="showPage('home')" data-en="Home" data-ar="الرئيسية">Home</a></li>
-                    <li><a href="#policy" onclick="showPage('policy')" data-en="Policy" data-ar="السياسة">Policy</a></li>
+                    <li><a href="privacy_policy.html" target="_blank" data-en="Policy" data-ar="السياسة">Policy</a></li>
                 </ul>
             </div>
             <div>
@@ -186,7 +127,189 @@
         </div>
     </footer>
 
-    <!-- PWA Manifest & Service Worker Script -->
     <script src="main.js"></script>
+    <script>
+        // NOTE: The user's original content had a lot of inline JS logic here.
+        // For clarity and best practice, this JS is provided below the main script tag.
+        // It is assumed the user will either move this logic to 'main.js' or leave it inline.
+        // The logic remains the same, only the 'policy' related logic is no longer needed 
+        // in showPage() but the function itself is kept for 'home' and 'app-details'.
+
+        // Manually create and append a manifest.json link to keep everything in one file
+        const manifest = {
+            "name": "RaqamIT",
+            "short_name": "RaqamIT",
+            "start_url": "./",
+            "display": "standalone",
+            "background_color": "#ffffff",
+            "theme_color": "#0d9488",
+            "icons": [
+                {
+                    "src": "https://placehold.co/192x192/0d9488/ffffff?text=RA",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                },
+                {
+                    "src": "https://placehold.co/512x512/0d9488/ffffff?text=RA",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        };
+        const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
+        const manifestURL = URL.createObjectURL(manifestBlob);
+        const link = document.createElement('link');
+        link.rel = 'manifest';
+        link.href = manifestURL;
+        document.head.appendChild(link);
+
+        // Manually create and register a service worker
+        if ('serviceWorker' in navigator) {
+            const serviceWorkerContent = `
+                self.addEventListener('install', (event) => {
+                    event.waitUntil(
+                        caches.open('raqam-it-cache-v1').then((cache) => {
+                            return cache.addAll([
+                                '/',
+                                '/index.html',
+                                '/privacy_policy.html', // Added the new policy file to the cache
+                                'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+                            ]);
+                        })
+                    );
+                });
+                
+                self.addEventListener('fetch', (event) => {
+                    event.respondWith(
+                        caches.match(event.request).then((response) => {
+                            return response || fetch(event.request);
+                        })
+                    );
+                });
+            `;
+            const swBlob = new Blob([serviceWorkerContent], { type: 'application/javascript' });
+            const swURL = URL.createObjectURL(swBlob);
+
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register(swURL, { type: 'module' }).then((reg) => {
+                    console.log('Service worker registered successfully', reg);
+                }).catch((error) => {
+                    console.log('Service worker registration failed:', error);
+                });
+            });
+        }
+
+    // const langElements = document.querySelectorAll('[data-en], [data-ar]');
+        const languageToggleBtn = document.getElementById('language-toggle-btn');
+        const languageText = document.getElementById('language-text');
+        let currentLanguage = localStorage.getItem('lang') || 'en';
+
+        const themeToggles = {
+            light: document.getElementById('theme-toggle-light'),
+            dark: document.getElementById('theme-toggle-dark'),
+            teal: document.getElementById('theme-toggle-teal')
+        };
+        const body = document.body;
+        let currentTheme = localStorage.getItem('theme') || 'light';
+        
+        const appDetailsData = {
+            huruf: {
+                en: {
+                    title: "Huruf: Arabic Word Game",
+                    desc: "Huruf is a captivating Arabic word-finding game that challenges players to form as many words as possible from a random grid of letters. It's a fun and effective way to enhance your Arabic vocabulary and test your language skills. The game features various difficulty levels and a timer mode for competitive play."
+                },
+                ar: {
+                    title: "حروف: لعبة الكلمات العربية",
+                    desc: "حروف هي لعبة كلمات عربية آسرة تتحدى اللاعبين لتكوين أكبر عدد ممكن من الكلمات من شبكة عشوائية من الحروف. إنها طريقة ممتعة وفعالة لتعزيز مفرداتك العربية واختبار مهاراتك اللغوية. تتميز اللعبة بمستويات صعوبة متنوعة ووضع توقيت للعب التنافسي."
+                },
+                img: "https://placehold.co/150x150/d1d5db/4b5563?text=Huruf"
+            },
+            // tarkib data kept as it was commented out in the HTML section
+            tarkib: { 
+                en: {
+                    title: "Tarkib: Scrabble-like Game",
+                    desc: "Tarkib is a highly engaging multi-player game similar to Scrabble. Players earn points by strategically building words on a board with special bonus squares. It’s perfect for friends and family who love a good challenge and want to test their linguistic prowess in a competitive setting."
+                },
+                ar: {
+                    title: "تركيب: لعبة شبيهة بـ Scrabble",
+                    desc: "تركيب هي لعبة جماعية جذابة للغاية تشبه Scrabble. يكسب اللاعبون النقاط عن طريق بناء الكلمات بشكل استراتيجي على لوحة بها مربعات إضافية خاصة. إنها مثالية للأصدقاء والعائلة الذين يحبون التحدي الجيد ويريدون اختبار براعتهم اللغوية في بيئة تنافسية."
+                },
+                img: "https://placehold.co/150x150/d1d5db/4b5563?text=Tarkib"
+            },
+            wordFinder: {
+                en: {
+                    title: "Arabic Word Finder",
+                    desc: "An invaluable tool for students and writers, this app helps you find perfect Arabic words by searching for synonyms, definitions, and related terms. With a comprehensive database, it simplifies research and enhances your writing efficiency. It is a must-have for anyone working with the Arabic language."
+                },
+                ar: {
+                    title: "باحث الكلمات العربية",
+                    desc: "أداة لا تقدر بثمن للطلاب والكتّاب، يساعدك هذا التطبيق على العثور على الكلمات العربية المثالية من خلال البحث عن المرادفات والتعريفات والمصطلحات ذات الصلة. مع قاعدة بيانات شاملة، فإنه يبسط البحث ويعزز كفاءة كتابتك. إنه أمر لا غنى عنه لأي شخص يعمل باللغة العربية."
+                },
+                img: "https://placehold.co/150x150/d1d5db/4b5563?text=Finder"
+            }
+        };
+
+        // Function to update content based on selected language
+        function updateContent(lang) {
+            document.documentElement.lang = lang;
+            langElements.forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) {
+                    el.textContent = text;
+                }
+            });
+            languageText.textContent = lang === 'en' ? 'العربية' : 'English';
+        }
+        
+        // Function to switch themes
+        function switchTheme(theme) {
+            body.className = `${theme}-theme`;
+            localStorage.setItem('theme', theme);
+        }
+
+        // Function to show a specific page (now only for 'home' and 'app-details')
+        function showPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(`${pageId}-page`).classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showAppDetails(appId) {
+            const app = appDetailsData[appId];
+            if (!app) return;
+
+            const lang = currentLanguage;
+            
+            document.getElementById('app-details-img').src = app.img;
+            document.getElementById('app-details-title').textContent = app[lang].title;
+            document.getElementById('app-details-desc').textContent = app[lang].desc;
+            
+            showPage('app-details');
+        }
+
+        // Event listeners for theme buttons
+        themeToggles.light.addEventListener('click', () => switchTheme('light'));
+        themeToggles.dark.addEventListener('click', () => switchTheme('dark'));
+        themeToggles.teal.addEventListener('click', () => switchTheme('teal'));
+
+        // Event listener for language toggle button
+        languageToggleBtn.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+            updateContent(currentLanguage);
+            localStorage.setItem('lang', currentLanguage);
+        });
+
+        // Initialize state on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent(currentLanguage);
+            switchTheme(currentTheme);
+        });
+    </script>
 </body>
 </html>
