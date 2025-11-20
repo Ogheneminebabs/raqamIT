@@ -122,7 +122,9 @@
                     el.textContent = text;
                 }
             });
-            languageText.textContent = lang === 'en' ? 'العربية' : 'English';
+            if (languageText) {
+                languageText.textContent = lang === 'en' ? 'العربية' : 'English';
+            }
         }
         
         // Function to switch themes
@@ -131,46 +133,81 @@
             localStorage.setItem('theme', theme);
         }
 
-        // Function to show a specific page
+        // =========================================================
+        // Functions ONLY used on index.html (MUST BE CHECKED FOR NULL)
+        // =========================================================
+
+        // Function to show a specific page (only used in index.html, where pages are sections)
         function showPage(pageId) {
-            document.querySelectorAll('.page-section').forEach(section => {
-                section.classList.add('hidden');
-            });
-            document.getElementById(`${pageId}-page`).classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const pageSections = document.querySelectorAll('.page-section');
+            if (pageSections.length > 0) { // Check if we are on a multi-page setup (index.html)
+                pageSections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+                const targetPage = document.getElementById(`${pageId}-page`);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            } else {
+                // If showPage is called on privacy_policy.html (e.g., clicking logo)
+                // Redirect to the home page if it tries to go "home"
+                if (pageId === 'home') {
+                    window.location.href = 'index.html';
+                }
+            }
         }
-        
+
         function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            const section = document.getElementById(sectionId);
+            if (section) { // Null check for simplicity
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
         }
-        
+
         function showAppDetails(appId) {
             const app = appDetailsData[appId];
-            if (!app) return;
+            const appTitle = document.getElementById('app-details-title');
+            
+            // Check if the required elements for app details are present
+            if (!app || !appTitle) return; 
 
             const lang = currentLanguage;
             
             document.getElementById('app-details-img').src = app.img;
-            document.getElementById('app-details-title').textContent = app[lang].title;
+            appTitle.textContent = app[lang].title;
             document.getElementById('app-details-desc').textContent = app[lang].desc;
             
             showPage('app-details');
         }
 
-        // Event listeners for theme buttons
-        themeToggles.light.addEventListener('click', () => switchTheme('light'));
-        themeToggles.dark.addEventListener('click', () => switchTheme('dark'));
-        themeToggles.teal.addEventListener('click', () => switchTheme('teal'));
+        // Event listeners for theme buttons (Check if they exist)
+        if (themeToggles.light) themeToggles.light.addEventListener('click', () => switchTheme('light'));
+        if (themeToggles.dark) themeToggles.dark.addEventListener('click', () => switchTheme('dark'));
+        if (themeToggles.teal) themeToggles.teal.addEventListener('click', () => switchTheme('teal'));
 
-        // Event listener for language toggle button
-        languageToggleBtn.addEventListener('click', () => {
-            currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
-            updateContent(currentLanguage);
-            localStorage.setItem('lang', currentLanguage);
-        });
+        // Event listener for language toggle button (Check if it exists)
+        if (languageToggleBtn) {
+            languageToggleBtn.addEventListener('click', () => {
+                currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+                updateContent(currentLanguage);
+                localStorage.setItem('lang', currentLanguage);
+            });
+        }
+
+        // Make sure global functions are available (required for inline HTML onclick)
+        window.showPage = showPage;
+        window.scrollToSection = scrollToSection;
+        window.showAppDetails = showAppDetails;
 
         // Initialize state on page load
         document.addEventListener('DOMContentLoaded', () => {
             updateContent(currentLanguage);
             switchTheme(currentTheme);
+
+            // Set current year in footer
+            const currentYearElement = document.getElementById('current-year');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
         });
