@@ -1,3 +1,5 @@
+        // main.js
+
         // Manually create and append a manifest.json link to keep everything in one file
         const manifest = {
             "name": "RaqamIT",
