@@ -319,7 +319,6 @@
             display: none;
         }
         
-        /* / Language-specific styles for Arabic / */
         [lang="ar"] {
             direction: rtl;
         }
@@ -333,7 +332,6 @@
           text-align: right;
         }
 
-        /* / App Details Page Styles / */
         .app-details-content {
             padding: 2rem;
             text-align: center;
