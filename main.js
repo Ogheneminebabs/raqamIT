@@ -152,11 +152,6 @@
             }
         }
         
-        // Function to switch themes
-        // function switchTheme(theme) {
-        //     body.className = `${theme}-theme`;
-        //     localStorage.setItem('theme', theme);
-        // }
 
         // =========================================================
         // Functions ONLY used on index.html (MUST BE CHECKED FOR NULL)
