@@ -69,38 +69,13 @@
         const languageText = document.getElementById('language-text');
         let currentLanguage = localStorage.getItem('lang') || 'en';
 
-        const themeToggleButton = document.getElementById('theme-toggle-btn');
+        const themeToggles = {
+            light: document.getElementById('theme-toggle-light'),
+            dark: document.getElementById('theme-toggle-dark'),
+            teal: document.getElementById('theme-toggle-teal')
+        };
         const body = document.body;
         let currentTheme = localStorage.getItem('theme') || 'light';
-        const themes = ['light', 'dark', 'teal'];
-
-        // Function to update the theme and icon
-        function switchTheme(theme) {
-            body.className = `${theme}-theme`;
-            localStorage.setItem('theme', theme);
-
-            if (themeToggleButton) {
-                const iconElement = themeToggleButton.querySelector('i');
-                // Simple logic to change icon based on the mode
-                iconElement.className = 'fas'; 
-                if (theme === 'dark') {
-                    iconElement.classList.add('fa-moon');
-                } else if (theme === 'light') {
-                    iconElement.classList.add('fa-sun');
-                } else {
-                    iconElement.classList.add('fa-palette'); // Use palette for teal/custom
-                }
-            }
-        }
-
-        // Function to cycle through the themes (the new user interaction)
-        function cycleTheme() {
-            const currentIndex = themes.indexOf(currentTheme);
-            const nextIndex = (currentIndex + 1) % themes.length;
-            currentTheme = themes[nextIndex];
-            switchTheme(currentTheme);
-        }
-
         
         const appDetailsData = {
             huruf: {
@@ -114,16 +89,16 @@
                 },
                 img: "https://placehold.co/150x150/d1d5db/4b5563?text=Huruf"
             },
-            tarkib: {
+            tarkiib: {
                 en: {
-                    title: "Tarkib: Scrabble-like Game",
-                    desc: "Tarkib is a highly engaging multi-player game similar to Scrabble. Players earn points by strategically building words on a board with special bonus squares. It’s perfect for friends and family who love a good challenge and want to test their linguistic prowess in a competitive setting."
+                    title: "Tarkiib - Arabic Board Game",
+                    desc: "Tarkiib is a highly engaging multi-player Arabic Board Game. Players earn points by strategically building words on a board with special bonus squares. It’s perfect for friends and family who love a good challenge and want to test their linguistic prowess in a competitive setting."
                 },
                 ar: {
-                    title: "تركيب: لعبة شبيهة بـ Scrabble",
-                    desc: "تركيب هي لعبة جماعية جذابة للغاية تشبه Scrabble. يكسب اللاعبون النقاط عن طريق بناء الكلمات بشكل استراتيجي على لوحة بها مربعات إضافية خاصة. إنها مثالية للأصدقاء والعائلة الذين يحبون التحدي الجيد ويريدون اختبار براعتهم اللغوية في بيئة تنافسية."
+                    title: "تركيب - لعبة لوحية عربية",
+                    desc: "تركيب هي لعبة لوحية عربية متعددة اللاعبين وجذابة للغاية. يكسب اللاعبون النقاط عن طريق بناء الكلمات بشكل استراتيجي على لوحة بها مربعات إضافية خاصة. إنها مثالية للأصدقاء والعائلة الذين يحبون التحدي الجيد ويريدون اختبار براعتهم اللغوية في بيئة تنافسية."
                 },
-                img: "https://placehold.co/150x150/d1d5db/4b5563?text=Tarkib"
+                img: "https://placehold.co/150x150/d1d5db/4b5563?text=Tarkiib" // Assuming this line follows
             },
             wordFinder: {
                 en: {
@@ -152,6 +127,11 @@
             }
         }
         
+        // Function to switch themes
+        function switchTheme(theme) {
+            body.className = `${theme}-theme`;
+            localStorage.setItem('theme', theme);
+        }
 
         // =========================================================
         // Functions ONLY used on index.html (MUST BE CHECKED FOR NULL)
@@ -202,9 +182,9 @@
         }
 
         // Event listeners for theme buttons (Check if they exist)
-        if (themeToggleButton) {
-            themeToggleButton.addEventListener('click', cycleTheme);
-        }
+        if (themeToggles.light) themeToggles.light.addEventListener('click', () => switchTheme('light'));
+        if (themeToggles.dark) themeToggles.dark.addEventListener('click', () => switchTheme('dark'));
+        if (themeToggles.teal) themeToggles.teal.addEventListener('click', () => switchTheme('teal'));
 
         // Event listener for language toggle button (Check if it exists)
         if (languageToggleBtn) {
