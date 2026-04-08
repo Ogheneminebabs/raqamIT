@@ -69,14 +69,6 @@
             color: var(--primary-color);
         }
 
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-            gap: 0.5rem;
-        }
-
         @media (min-width: 768px) {
             header {
                 padding: 1.5rem;
@@ -86,21 +78,96 @@
                 gap: 1rem;
             }
         }
+/* Container for all controls */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0; /* Reset for mobile */
+}
 
-        .theme-btn, .language-btn {
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            cursor: pointer;
-            transition: background-color 0.2s, color 0.2s, transform 0.2s;
-        }
+/* Grouping the theme buttons closer together */
+.theme-group {
+    display: flex;
+    gap: 0.4rem;
+}
 
-        .theme-btn:hover, .language-btn:hover {
-            transform: translateY(-2px);
-        }
-        
+/* Base button styles to ensure uniformity */
+.theme-btn, 
+.language-btn, 
+.policy-link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; /* Fixed height for all */
+    padding: 0 0.75rem;
+    border-radius: 8px; /* Slightly softer than pill for professional look */
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* Specific styling for theme icons */
+.theme-btn {
+    width: 40px; /* Square buttons for icons */
+    padding: 0;
+}
+
+/* Language button and Policy link adjustments */
+.language-btn {
+    min-width: 80px;
+    font-family: 'Inter', sans-serif;
+}
+
+.policy-link-btn {
+    border: 1px solid transparent; /* Subtle difference for the link */
+    background: transparent;
+}
+
+/* Hover effects */
+.theme-btn:hover, 
+.language-btn:hover, 
+.policy-link-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+/* Active Theme State (if you use a JS class) */
+.theme-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Divider for visual clarity */
+.nav-divider {
+    width: 1px;
+    height: 24px;
+    background-color: var(--border-color);
+    margin: 0 0.25rem;
+    opacity: 0.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    header nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-controls {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
         .hero-section {
             text-align: center;
             padding: 4rem 1rem;
