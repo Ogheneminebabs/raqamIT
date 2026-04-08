@@ -110,6 +110,17 @@
                     desc: "أداة لا تقدر بثمن للطلاب والكتّاب، يساعدك هذا التطبيق على العثور على الكلمات العربية المثالية من خلال البحث عن المرادفات والتعريفات والمصطلحات ذات الصلة. مع قاعدة بيانات شاملة، فإنه يبسط البحث ويعزز كفاءة كتابتك. إنه أمر لا غنى عنه لأي شخص يعمل باللغة العربية."
                 },
                 img: "https://placehold.co/150x150/d1d5db/4b5563?text=Finder"
+            },
+            kalimat: {
+                en: {
+                    title: "Kalimat - Arabic Crossword",
+                    desc: "Kalimat brings the timeless challenge of crossword puzzles to the Arabic digital world. Featuring a wide range of difficulty levels and culturally relevant clues, it offers an engaging way to test your vocabulary and mental agility. Perfect for casual play or serious language learners seeking to master Arabic word structures in a fun, interactive format."
+                },
+                ar: {
+                    title: "كلمات - كلمات متقاطعة",
+                    desc: "تُعيد 'كلمات' التحدي الكلاسيكي للألغاز المتقاطعة إلى العالم الرقمي العربي. تتميز اللعبة بمستويات صعوبة متنوعة وتلميحات غنية ثقافياً، مما يوفر طريقة ممتعة لاختبار مفرداتك ونشاطك الذهني. مثالية للعب الترفيهي أو لمتعلمي اللغة الجادين الذين يسعون لإتقان تراكيب الكلمات العربية بأسلوب تفاعلي ممتع."
+                },
+                img: "https://placehold.co/150x150/d1d5db/4b5563?text=Kalimat"
             }
         };
 
