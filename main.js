@@ -161,7 +161,7 @@
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             } else {
-                // If showPage is called on privacy_policy.html (e.g., clicking logo)
+                // If showPage is called on privacy.html (e.g., clicking logo)
                 // Redirect to the home page if it tries to go "home"
                 if (pageId === 'home') {
                     window.location.href = 'index.html';
